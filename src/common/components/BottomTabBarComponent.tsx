@@ -1,3 +1,4 @@
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import React from "react";
 import {
   Image,
@@ -16,12 +17,8 @@ type TTabData = {
 
 const TABS_DATA: Array<TTabData> = [];
 
-type TBottomTabBarProps = {
-  navigation: any;
-  state: any;
-};
 
-const BottomTabBarComponent: React.FC<TBottomTabBarProps> = ({
+const BottomTabBarComponent: React.FC<BottomTabBarProps> = ({
   navigation,
   state,
 }) => {

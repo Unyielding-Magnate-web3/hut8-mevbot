@@ -1,5 +1,8 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  BottomTabBarProps,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
 import BottomTabBarComponent from "../../common/components/BottomTabBarComponent";
 import { ROUTE_LIST, ROUTE_TITLE } from "../../core/constants/routes";
 
@@ -10,7 +13,9 @@ const BottomTabs = () => {
     <Tab.Navigator
       screenOptions={{ headerShown: false }}
       backBehavior="initialRoute"
-      tabBar={(props: any) => <BottomTabBarComponent {...props} />}
+      tabBar={(props: BottomTabBarProps) => (
+        <BottomTabBarComponent {...props} />
+      )}
     >
       <Tab.Screen
         name={ROUTE_TITLE[ROUTE_LIST.HOME_TAB]}
