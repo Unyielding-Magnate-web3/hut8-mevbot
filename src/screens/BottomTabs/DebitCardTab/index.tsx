@@ -1,12 +1,12 @@
 import React from "react";
-import { Text } from "react-native";
+import HeaderStyle1Component from "../../../common/components/HeaderType1Component";
 import GeneralContainer from "../../../common/container/generalContainer";
-import { StyleGlobal } from "../../../common/styles/styles-global";
 
 const DebitCardTab = () => {
   return (
     <GeneralContainer>
-  
+      <HeaderStyle1Component title="Debit Card">
+      </HeaderStyle1Component>
     </GeneralContainer>
   );
 };
