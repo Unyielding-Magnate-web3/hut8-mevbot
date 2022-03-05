@@ -1,4 +1,5 @@
 export const ImagesGlobal = {
+  LogoPrimary: require("../../assets/images/logo_primary.png"),
   IconHome: require("../../assets/images/home.png"),
   IconHomeSelected: require("../../assets/images/home_selected.png"),
   IconDebitCard: require("../../assets/images/debit_card.png"),
