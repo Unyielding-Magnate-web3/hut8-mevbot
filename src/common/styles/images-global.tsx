@@ -10,4 +10,8 @@ export const ImagesGlobal = {
   IconCreditSelected: require("../../assets/images/credit_selected.png"),
   IconProfile: require("../../assets/images/profile.png"),
   IconProfileSelected: require("../../assets/images/profile_selected.png"),
+  IconShow: require("../../assets/images/show.png"),
+  IconHide: require("../../assets/images/hide.png"),
+  IconCardBrandAspire: require("../../assets/images/card_brand_aspire.png"),
+  IconCardNetworkVisa: require("../../assets/images/card_network_visa.png"),
 };
