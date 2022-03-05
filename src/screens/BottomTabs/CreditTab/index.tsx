@@ -3,15 +3,15 @@ import { Text } from "react-native";
 import GeneralContainer from "../../../common/container/generalContainer";
 import { StyleGlobal } from "../../../common/styles/styles-global";
 
-const HomeTab = () => {
+const CreditTab = () => {
   return (
     <GeneralContainer>
-      <Text style={StyleGlobal.title}>{"Home is"}</Text>
+      <Text style={StyleGlobal.title}>{"Credit"}</Text>
       <Text style={StyleGlobal.subTitle}>
-        {"where wifi connects automatically"}
+        {"isn't that's just capita...never mind"}
       </Text>
     </GeneralContainer>
   );
 };
 
-export default HomeTab;
+export default CreditTab;

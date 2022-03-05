@@ -5,6 +5,11 @@ import {
 } from "@react-navigation/bottom-tabs";
 import BottomTabBarComponent from "../../common/components/BottomTabBarComponent";
 import { ROUTE_LIST, ROUTE_TITLE } from "../../core/constants/routes";
+import HomeTab from "./HomeTab";
+import DebitCardTab from "./DebitCardTab";
+import PaymentsTab from "./PaymentsTab";
+import CreditTab from "./CreditTab";
+import ProfileTab from "./ProfileTab";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,25 +22,22 @@ const BottomTabs = () => {
         <BottomTabBarComponent {...props} />
       )}
     >
-      <Tab.Screen
-        name={ROUTE_TITLE[ROUTE_LIST.HOME_TAB]}
-        component={() => <></>}
-      />
+      <Tab.Screen name={ROUTE_TITLE[ROUTE_LIST.HOME_TAB]} component={HomeTab} />
       <Tab.Screen
         name={ROUTE_TITLE[ROUTE_LIST.DEBIT_CARD_TAB]}
-        component={() => <></>}
+        component={DebitCardTab}
       />
       <Tab.Screen
         name={ROUTE_TITLE[ROUTE_LIST.PAYMENTS_TAB]}
-        component={() => <></>}
+        component={PaymentsTab}
       />
       <Tab.Screen
         name={ROUTE_TITLE[ROUTE_LIST.CREDIT_TAB]}
-        component={() => <></>}
+        component={CreditTab}
       />
       <Tab.Screen
         name={ROUTE_TITLE[ROUTE_LIST.PROFILE_TAB]}
-        component={() => <></>}
+        component={ProfileTab}
       />
     </Tab.Navigator>
   );

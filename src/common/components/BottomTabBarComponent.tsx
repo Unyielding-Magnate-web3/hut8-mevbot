@@ -2,12 +2,15 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import React from "react";
 import {
   Image,
+  PixelRatio,
   SafeAreaView,
+  StyleSheet,
   Text,
   TouchableHighlight,
   View,
 } from "react-native";
 import { ROUTE_LIST, ROUTE_TITLE } from "../../core/constants/routes";
+import { ColorsGlobal } from "../styles/colors-global";
 
 type TTabData = {
   index: number;
@@ -54,30 +57,73 @@ const BottomTabBarComponent: React.FC<BottomTabBarProps> = ({
   state,
 }) => {
   return (
-    <View>
-      <View>
+    <View style={styles.container}>
+      <View style={styles.inner}>
         {TABS_DATA.map((item, index) => {
-          const active = state.index == item.index;
+          const isSelected = state.index == item.index;
           return (
             <TouchableHighlight
               underlayColor="transparent"
               key={index}
               onPress={() => navigation.navigate(item.title)}
+              style={styles.iconContainer}
             >
               <>
                 <Image
-                  source={active ? item.iconSelected : item.icon}
+                  source={isSelected ? item.iconSelected : item.icon}
                   resizeMode={"contain"}
+                  style={styles.iconImage}
                 />
-                <Text>{item.title}</Text>
+                <Text style={isSelected ? styles.titleSelected : styles.title}>
+                  {item.title}
+                </Text>
               </>
             </TouchableHighlight>
           );
         })}
       </View>
-      <SafeAreaView />
+      <SafeAreaView style={styles.safeAreaViewStyle} />
     </View>
   );
 };
 
 export default BottomTabBarComponent;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: ColorsGlobal.White,
+    position: "absolute",
+    elevation: 2,
+    bottom: 0,
+    right: 0,
+    left: 0,
+  },
+  inner: {
+    flexDirection: "row",
+  },
+  iconImage: {
+    height: PixelRatio.roundToNearestPixel(24 / PixelRatio.getFontScale()),
+    width: PixelRatio.roundToNearestPixel(24 / PixelRatio.getFontScale()),
+  },
+  iconContainer: {
+    flex: 1,
+    paddingVertical: PixelRatio.roundToNearestPixel(
+      8 / PixelRatio.getFontScale()
+    ),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    color: ColorsGlobal.TabIcon,
+    marginTop: PixelRatio.roundToNearestPixel(1 / PixelRatio.getFontScale()),
+    fontSize: PixelRatio.roundToNearestPixel(10 / PixelRatio.getFontScale()),
+  },
+  titleSelected: {
+    color: ColorsGlobal.TabIconSelected,
+    marginTop: PixelRatio.roundToNearestPixel(1 / PixelRatio.getFontScale()),
+    fontSize: PixelRatio.roundToNearestPixel(10 / PixelRatio.getFontScale()),
+  },
+  safeAreaViewStyle: {
+    backgroundColor: ColorsGlobal.White,
+  },
+});
