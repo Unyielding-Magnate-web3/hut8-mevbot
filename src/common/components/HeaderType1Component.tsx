@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
 import { ImagesGlobal } from "../styles/images-global";
