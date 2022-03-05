@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   iconImage: {
-    height: PixelRatio.roundToNearestPixel(30 / PixelRatio.getFontScale()),
-    width: PixelRatio.roundToNearestPixel(30 / PixelRatio.getFontScale()),
+    height: PixelRatio.roundToNearestPixel(25 / PixelRatio.getFontScale()),
+    width: PixelRatio.roundToNearestPixel(25 / PixelRatio.getFontScale()),
   },
   iconContainer: {
     flex: 1,

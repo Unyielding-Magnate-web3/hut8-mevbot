@@ -1,21 +1,42 @@
 import React from "react";
-import { View } from "react-native";
-import { StyleSheet } from "react-native";
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from "react-native";
+import { ColorsGlobal } from "../styles/colors-global";
 
 type TProps = {
-  children: any;
+  containerStyle?: ViewStyle | Array<ViewStyle>;
+  containerInnerStyle?: ViewStyle | Array<ViewStyle>;
+  children: React.ReactNode;
 };
 
-const GeneralContainer = (props: TProps) => {
-  return <View style={style.container}>{props.children}</View>;
+const GeneralContainer: React.FC<TProps> = ({
+  containerInnerStyle = {},
+  containerStyle,
+  children,
+}) => {
+  return (
+    <SafeAreaView style={containerStyle || stylesDefault.container}>
+      <View style={containerInnerStyle || stylesDefault.containerInner}>
+        <StatusBar animated barStyle={"dark-content"} />
+        {children}
+      </View>
+    </SafeAreaView>
+  );
 };
-
-export default GeneralContainer;
-
-const style = StyleSheet.create({
+const stylesDefault = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: ColorsGlobal.Secondary,
+  },
+  containerInner: {
+    flex: 1,
+    backgroundColor: ColorsGlobal.White,
   },
 });
+
+export default GeneralContainer;
