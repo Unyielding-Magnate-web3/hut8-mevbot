@@ -20,4 +20,5 @@ export const ImagesGlobal = {
   IconMenuDebitGetANew: require("../../assets/images/menu_debit_get_a_new.png"),
   IconMenuDebitDeactivate: require("../../assets/images/menu_debit_deactivate.png"),
   IconBack: require("../../assets/images/back.png"),
+  IconGuage: require("../../assets/images/guage.png"),
 };
