@@ -7,11 +7,7 @@ import { StyleGlobal } from "../styles/styles-global";
 export const ErrorComponent = () => {
   return (
     <View style={StyleGlobal.errorContainer}>
-      <Text style={StyleGlobal.errorText}>{Language.Loading}</Text>
-      <ActivityIndicator
-        size="large"
-        color={ColorsGlobal.White}
-      ></ActivityIndicator>
+      <Text style={StyleGlobal.errorText}>{Language.Error}</Text>
     </View>
   );
 };
