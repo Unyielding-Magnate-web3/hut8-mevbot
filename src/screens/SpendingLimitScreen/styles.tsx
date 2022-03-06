@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { ColorsGlobal } from "../../common/styles/colors-global";
+import { FontsGlobal } from "../../common/styles/fonts-global";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 
 export default StyleSheet.create({
@@ -10,14 +11,15 @@ export default StyleSheet.create({
   textSpendingLimitHelp: {
     color: ColorsGlobal.TextSecondary,
     marginTop: GeneralHelper.ScaledSize(10),
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(13),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
   },
   containerInner: {
     flex: 1,
     paddingHorizontal: GeneralHelper.ScaledSize(20),
     backgroundColor: ColorsGlobal.White,
-    borderTopRightRadius: GeneralHelper.ScaledSize(25),
-    borderTopLeftRadius: GeneralHelper.ScaledSize(25),
+    borderTopRightRadius: GeneralHelper.ScaledSize(24),
+    borderTopLeftRadius: GeneralHelper.ScaledSize(24),
     paddingBottom: GeneralHelper.ScaledSize(20),
     marginTop: GeneralHelper.ScaledSize(50),
     marginBottom: -GeneralHelper.ScaledSize(35),
@@ -27,13 +29,14 @@ export default StyleSheet.create({
     marginTop: GeneralHelper.ScaledSize(20),
     alignItems: "center",
   },
-  subtitleLogoStyle: {
-    width: GeneralHelper.ScaledSize(15),
-    height: GeneralHelper.ScaledSize(15),
+  imageIconGuage: {
+    width: GeneralHelper.ScaledSize(16),
+    height: GeneralHelper.ScaledSize(16),
   },
   textSummary: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     marginLeft: GeneralHelper.ScaledSize(10),
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(14),
   },
   containerButtonsQuickSelect: {
     display: "flex",
@@ -51,7 +54,8 @@ export default StyleSheet.create({
   },
   textButtonQuickSelect: {
     color: ColorsGlobal.Primary,
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(12),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
   },
   buttonQuickSelectWrapper: {
     flex: 1,
@@ -69,10 +73,10 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
     height: GeneralHelper.ScaledSize(50),
-    // backgroundColor: ColorsGlobal.ButtonInactive,
   },
   textButtonSave: {
-    fontSize: GeneralHelper.ScaledSize(15),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
+    fontSize: GeneralHelper.ScaledSize(16),
     color: ColorsGlobal.White,
   },
 });

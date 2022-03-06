@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import ButtonToggle from "../../../../common/components/ButtonToggle";
 import { ColorsGlobal } from "../../../../common/styles/colors-global";
+import { FontsGlobal } from "../../../../common/styles/fonts-global";
 import {
   eMenuItemType,
   eMenuItemValue,
@@ -82,11 +83,14 @@ const styles = StyleSheet.create({
     marginLeft: GeneralHelper.ScaledSize(15),
   },
   title: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     color: ColorsGlobal.TextPrimary,
-    fontSize: GeneralHelper.ScaledSize(15),
+    fontSize: GeneralHelper.ScaledSize(14),
   },
   description: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     color: ColorsGlobal.TextSecondary,
-    fontSize: GeneralHelper.ScaledSize(12),
+    fontSize: GeneralHelper.ScaledSize(13),
+    lineHeight: 25,
   },
 });

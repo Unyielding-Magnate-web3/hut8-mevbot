@@ -10,7 +10,9 @@ import {
   View,
 } from "react-native";
 import { ROUTE_LIST, ROUTE_TITLE } from "../../core/constants/routes";
+import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 import { ImagesGlobal } from "../styles/images-global";
 
 type TTabData = {
@@ -109,21 +111,23 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     flex: 1,
-    paddingVertical: PixelRatio.roundToNearestPixel(
-      8 / PixelRatio.getFontScale()
-    ),
+    paddingTop: PixelRatio.roundToNearestPixel(8 / PixelRatio.getFontScale()),
     justifyContent: "center",
     alignItems: "center",
   },
   title: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     color: ColorsGlobal.TabIcon,
     marginTop: PixelRatio.roundToNearestPixel(1 / PixelRatio.getFontScale()),
-    fontSize: PixelRatio.roundToNearestPixel(10 / PixelRatio.getFontScale()),
+    fontSize: GeneralHelper.ScaledSize(9),
+    lineHeight: 20,
   },
   titleSelected: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
     color: ColorsGlobal.TabIconSelected,
     marginTop: PixelRatio.roundToNearestPixel(1 / PixelRatio.getFontScale()),
-    fontSize: PixelRatio.roundToNearestPixel(10 / PixelRatio.getFontScale()),
+    fontSize: GeneralHelper.ScaledSize(9),
+    lineHeight: 20,
   },
   safeAreaViewStyle: {
     backgroundColor: ColorsGlobal.White,

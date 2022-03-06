@@ -3,6 +3,7 @@ import { Text, StyleSheet, View, TextInput, Alert } from "react-native";
 import { Language } from "../../core/constants/language";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 
 type IProps = {
   onChange: (val: number) => void;
@@ -43,11 +44,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   textCurrency: {
-    fontSize: GeneralHelper.ScaledSize(10),
-    fontWeight: "bold",
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
+    fontSize: GeneralHelper.ScaledSize(13),
     color: ColorsGlobal.White,
-    paddingHorizontal: GeneralHelper.ScaledSize(15),
-    paddingVertical: GeneralHelper.ScaledSize(5),
+    paddingHorizontal: GeneralHelper.ScaledSize(13),
+    paddingVertical: GeneralHelper.ScaledSize(6),
   },
   container: {
     flexDirection: "row",
@@ -57,8 +58,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputCurrency: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
     flex: 1,
     marginLeft: GeneralHelper.ScaledSize(15),
-    fontSize: GeneralHelper.ScaledSize(20),
+    fontSize: GeneralHelper.ScaledSize(24),
   },
 });

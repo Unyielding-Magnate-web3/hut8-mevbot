@@ -5,6 +5,7 @@ import { eCurrencyFormat } from "../../core/constants/enums";
 import { Language } from "../../core/constants/language";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 type IProps = {
   spent: number;
   spendingLimit: number;
@@ -57,6 +58,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   textTitle: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
+    fontSize: GeneralHelper.ScaledSize(13),
     flex: 1,
   },
   containerGuageBar: {
@@ -74,6 +77,14 @@ const styles = StyleSheet.create({
     borderTopColor: ColorsGlobal.Primary,
     borderRightColor: ColorsGlobal.Transparent,
   },
-  textNume: { color: ColorsGlobal.Primary },
-  textDeno: { color: ColorsGlobal.TextSecondary },
+  textNume: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
+    color: ColorsGlobal.Primary,
+    fontSize: GeneralHelper.ScaledSize(13),
+  },
+  textDeno: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
+    color: ColorsGlobal.TextSecondary,
+    fontSize: GeneralHelper.ScaledSize(13),
+  },
 });

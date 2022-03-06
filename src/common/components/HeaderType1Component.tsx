@@ -2,6 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 import { ImagesGlobal } from "../styles/images-global";
 type IProps = {
   title: string;
@@ -38,8 +39,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   imageLogo: {
-    height: GeneralHelper.ScaledSize(30),
-    width: GeneralHelper.ScaledSize(30),
+    height: GeneralHelper.ScaledSize(25),
+    width: GeneralHelper.ScaledSize(25),
   },
   containerTitle: {
     flex: 1,
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   title: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
     fontSize: GeneralHelper.ScaledSize(24),
     color: ColorsGlobal.White,
     textAlign: "center",

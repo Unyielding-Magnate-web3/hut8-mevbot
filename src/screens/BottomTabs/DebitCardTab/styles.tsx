@@ -10,8 +10,8 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: ColorsGlobal.White,
     paddingHorizontal: GeneralHelper.ScaledSize(20),
-    borderTopRightRadius: GeneralHelper.ScaledSize(30),
-    borderTopLeftRadius: GeneralHelper.ScaledSize(30),
+    borderTopRightRadius: GeneralHelper.ScaledSize(24),
+    borderTopLeftRadius: GeneralHelper.ScaledSize(24),
     paddingBottom: GeneralHelper.ScaledSize(50),
   },
   spacer: {

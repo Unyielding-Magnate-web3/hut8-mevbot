@@ -9,6 +9,7 @@ import {
 import { Language } from "../../core/constants/language";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 import { ImagesGlobal } from "../styles/images-global";
 type IProps = {
   cardDetails: {};
@@ -94,9 +95,10 @@ const styles = StyleSheet.create({
     height: GeneralHelper.ScaledSize(30),
   },
   textButtonMask: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
     color: ColorsGlobal.Primary,
     marginLeft: GeneralHelper.ScaledSize(5),
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(12),
   },
   iconButtonMask: {
     width: GeneralHelper.ScaledSize(15),
@@ -122,15 +124,18 @@ const styles = StyleSheet.create({
     marginTop: GeneralHelper.ScaledSize(20),
   },
   textCardHolderName: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
     color: ColorsGlobal.White,
-    fontSize: GeneralHelper.ScaledSize(20),
+    fontSize: GeneralHelper.ScaledSize(22),
   },
   textCardNumber: {
     color: ColorsGlobal.White,
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
     marginTop: GeneralHelper.ScaledSize(30),
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(14),
     fontWeight: "900",
     letterSpacing: 5,
+    lineHeight: 20,
   },
   containerCardSecret: {
     flexDirection: "row",
@@ -145,14 +150,16 @@ const styles = StyleSheet.create({
     width: GeneralHelper.ScaledSize(60),
   },
   textCardExpiry: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     color: ColorsGlobal.White,
     marginTop: GeneralHelper.ScaledSize(20),
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(13),
   },
   textCardCVV: {
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     marginLeft: GeneralHelper.ScaledSize(35),
     color: ColorsGlobal.White,
     marginTop: GeneralHelper.ScaledSize(20),
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontSize: GeneralHelper.ScaledSize(13),
   },
 });

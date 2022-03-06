@@ -42,7 +42,7 @@ const SpendingLimitScreen = () => {
           <Image
             resizeMode="contain"
             source={ImagesGlobal.IconGuage}
-            style={styles.subtitleLogoStyle}
+            style={styles.imageIconGuage}
           />
           <Text style={styles.textSummary}>
             {Language.SpendingLimitSummary}

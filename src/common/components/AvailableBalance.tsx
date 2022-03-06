@@ -3,6 +3,7 @@ import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { Language } from "../../core/constants/language";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 
 type TProps = {
   balance: number;
@@ -57,6 +58,8 @@ const styles = StyleSheet.create({
     paddingRight: GeneralHelper.ScaledSize(8),
   },
   availableBalanceText: {
+    fontSize: GeneralHelper.ScaledSize(14),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Regular,
     color: ColorsGlobal.White,
     marginTop: GeneralHelper.ScaledSize(30),
   },
@@ -71,14 +74,16 @@ const styles = StyleSheet.create({
     width: GeneralHelper.ScaledSize(40),
     height: GeneralHelper.ScaledSize(20),
     backgroundColor: ColorsGlobal.Primary,
-    borderRadius: GeneralHelper.ScaledSize(5),
+    borderRadius: GeneralHelper.ScaledSize(3),
   },
   currencyText: {
-    fontSize: GeneralHelper.ScaledSize(10),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
+    fontSize: GeneralHelper.ScaledSize(12),
     color: ColorsGlobal.White,
   },
   balanceText: {
-    fontSize: GeneralHelper.ScaledSize(20),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
+    fontSize: GeneralHelper.ScaledSize(24),
     color: ColorsGlobal.White,
     marginLeft: GeneralHelper.ScaledSize(10),
   },

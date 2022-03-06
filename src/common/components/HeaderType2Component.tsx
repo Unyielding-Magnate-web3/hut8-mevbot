@@ -2,6 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import { ColorsGlobal } from "../styles/colors-global";
+import { FontsGlobal } from "../styles/fonts-global";
 import { ImagesGlobal } from "../styles/images-global";
 type IProps = {
   title: string;
@@ -45,8 +46,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   imageBackIcon: {
-    height: GeneralHelper.ScaledSize(20),
-    width: GeneralHelper.ScaledSize(20),
+    height: GeneralHelper.ScaledSize(16),
+    width: GeneralHelper.ScaledSize(9),
   },
   containerButtonBack: {
     flex: 1,
@@ -58,11 +59,12 @@ const styles = StyleSheet.create({
     paddingRight: GeneralHelper.ScaledSize(10),
   },
   imageLogo: {
-    height: GeneralHelper.ScaledSize(24),
-    width: GeneralHelper.ScaledSize(24),
+    height: GeneralHelper.ScaledSize(25),
+    width: GeneralHelper.ScaledSize(25),
   },
   textTitle: {
-    fontSize: GeneralHelper.ScaledSize(25),
+    fontFamily: FontsGlobal.AvenirNextLTPro_Bold,
+    fontSize: GeneralHelper.ScaledSize(24),
     color: ColorsGlobal.White,
     marginLeft: GeneralHelper.ScaledSize(25),
     marginTop: GeneralHelper.ScaledSize(25),
