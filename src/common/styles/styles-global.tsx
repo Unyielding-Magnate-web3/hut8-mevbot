@@ -18,6 +18,7 @@ export const StyleGlobal = StyleSheet.create({
     backgroundColor: ColorsGlobal.Secondary,
   },
   loadingContainer: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -27,6 +28,7 @@ export const StyleGlobal = StyleSheet.create({
     color: ColorsGlobal.White,
   },
   errorContainer: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
