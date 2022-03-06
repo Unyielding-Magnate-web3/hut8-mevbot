@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import ButtonToggle from "../../../../common/components/ButtonToggle";
 import { ColorsGlobal } from "../../../../common/styles/colors-global";
 import {
   eMenuItemType,
@@ -31,8 +32,17 @@ const MenuItem: React.FC<TProps> = ({
   value,
   onPress,
 }) => {
+  const isItemClickable =
+    ((type == eMenuItemType.Toggle && value == eMenuItemValue.Inactive) ||
+      type == eMenuItemType.Link) &&
+    onPress != null;
+  const isButtonClickable =
+    type == eMenuItemType.Toggle &&
+    value == eMenuItemValue.Active &&
+    onPress != null;
+
   return (
-    <TouchableOpacity onPress={onPress} disabled={!onPress}>
+    <TouchableOpacity onPress={onPress} disabled={!isItemClickable}>
       <View style={styles.container}>
         <View style={styles.containerInner}>
           <Image source={icon} style={styles.imageIcon} />
@@ -41,6 +51,13 @@ const MenuItem: React.FC<TProps> = ({
             <Text style={styles.description}>{description}</Text>
           </View>
         </View>
+        {type == eMenuItemType.Toggle && (
+          <ButtonToggle
+            isActive={value == eMenuItemValue.Active}
+            onPress={onPress}
+            disabled={!isButtonClickable}
+          />
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -51,6 +68,8 @@ export default MenuItem;
 const styles = StyleSheet.create({
   container: {
     marginVertical: GeneralHelper.ScaledSize(15),
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   containerInner: {
     flexDirection: "row",
