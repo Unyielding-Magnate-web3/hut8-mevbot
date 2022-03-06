@@ -19,7 +19,7 @@ type TProps = {
 };
 
 const GeneralContainer: React.FC<TProps> = ({
-  containerInnerStyle = {},
+  containerInnerStyle,
   containerStyle,
   children,
   isError,

@@ -12,9 +12,10 @@ export const StyleGlobal = StyleSheet.create({
     color: ColorsGlobal.White,
   },
   container: {
-    height: "100%",
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: ColorsGlobal.Secondary,
   },
   loadingContainer: {
     alignItems: "center",
