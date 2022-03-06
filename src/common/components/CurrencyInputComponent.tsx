@@ -6,11 +6,10 @@ import { ColorsGlobal } from "../styles/colors-global";
 
 type IProps = {
   onChange: (val: number) => void;
-  value: string;
+  value: number;
 };
 
 const CurrencyInputComponent: React.FC<IProps> = ({ onChange, value }) => {
- 
   const onChangeText = (val: string) => {
     if (val && val != "") {
       val = val.replace(/,/g, "");
@@ -25,7 +24,7 @@ const CurrencyInputComponent: React.FC<IProps> = ({ onChange, value }) => {
         <Text style={styles.textCurrency}>{Language.Currency}</Text>
       </View>
       <TextInput
-        value={value}
+        value={GeneralHelper.CurrencyToString(value)}
         keyboardType="numeric"
         onChangeText={onChangeText}
         style={styles.inputCurrency}

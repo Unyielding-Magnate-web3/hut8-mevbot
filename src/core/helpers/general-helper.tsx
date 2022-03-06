@@ -6,12 +6,16 @@ export class GeneralHelper {
     return PixelRatio.roundToNearestPixel(size / PixelRatio.getFontScale());
   }
 
-  static CurrencyToString(value: number, symbol: boolean = false) {
-    if (isNaN(value)) {
+  static CurrencyToString(
+    value: number,
+    showSymbol: boolean = false,
+    showZero: boolean = false
+  ) {
+    if (isNaN(value) || (value == 0 && showZero == false)) {
       return "";
     }
     return (
-      (symbol ? Language.Currency + " " : "") +
+      (showSymbol ? Language.Currency + " " : "") +
       value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     );
   }
