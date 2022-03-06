@@ -21,4 +21,7 @@ export const Language = {
   MenuItemDescriptionDebitGetANew: "This deactivates your current debit card",
   MenuItemTitleDebitDeactivated: "Deactivated cards",
   MenuItemDescriptionDebitDeactivated: "Your previously deactivated cards",
+
+  SpendingLimitSummary: "Set a weekly debit card spending limit",
+  SpendingLimitHelp: "Here weekly means the last 7 days - not the calendar week",
 };
