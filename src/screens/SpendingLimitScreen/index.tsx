@@ -12,6 +12,7 @@ import styles from "./styles";
 import { SpendingLimitQuickSelectData } from "../../core/constants/app-data";
 import { useDispatch } from "react-redux";
 import { actionSetSpendingLimit } from "../../redux/actions";
+import { eCurrencyFormat } from "../../core/constants/enums";
 
 const SpendingLimitScreen = () => {
   const dispatch = useDispatch();
@@ -66,7 +67,10 @@ const SpendingLimitScreen = () => {
                   style={styles.buttonQuickSelect}
                 >
                   <Text style={styles.textButtonQuickSelect}>
-                    {GeneralHelper.CurrencyToString(iValue, true)}
+                    {GeneralHelper.CurrencyToString(
+                      iValue,
+                      eCurrencyFormat.Full
+                    )}
                   </Text>
                 </TouchableOpacity>
               </View>

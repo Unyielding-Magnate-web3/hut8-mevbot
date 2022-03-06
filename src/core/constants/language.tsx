@@ -2,6 +2,7 @@ export const Language = {
   Loading: "Loading",
   Error: "Error",
   AvailableBalance: "Available balance",
+  CurrencyMin: "$",
   Currency: "S$",
   ShowCardNumber: "Show card number",
   HideCardNumber: "Hide card number",
@@ -26,4 +27,6 @@ export const Language = {
   SpendingLimitHelp:
     "Here weekly means the last 7 days - not the calendar week",
   SpendingLimitButtonSave: "Save",
+
+  DebitCardSpendingLimit: "Debit card spending limit",
 };

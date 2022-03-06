@@ -16,10 +16,9 @@ import { ROUTE_LIST } from "../../../core/constants/routes";
 import { useDispatch, useSelector } from "react-redux";
 import { IRootState } from "../../../redux/reducers";
 import { actionSetSpendingLimit } from "../../../redux/actions";
+import SpendingLimitGuageComponent from "../../../common/components/SpendingLimitGuageComponent";
 
 const DebitCardTab = () => {
-  const currentWeeklyLimit = 10;
-
   type NavigationProps = StackNavigationProp<
     RootStackParamList,
     ROUTE_LIST.BOTTOM_TAB
@@ -52,6 +51,13 @@ const DebitCardTab = () => {
         <View style={styles.spacer}></View>
         <View style={styles.content}>
           <CardComponent cardDetails={{}} />
+
+          {selectSpendingLimit > 0 && (
+            <SpendingLimitGuageComponent
+              spendingLimit={selectSpendingLimit}
+              spent={5000}
+            />
+          )}
 
           <View style={{ paddingTop: 20 }}>
             <MenuItem
