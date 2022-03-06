@@ -1,8 +1,10 @@
 import React from "react";
 import {
+  Keyboard,
   SafeAreaView,
   StatusBar,
   StyleSheet,
+  TouchableWithoutFeedback,
   View,
   ViewStyle,
 } from "react-native";
@@ -27,16 +29,18 @@ const GeneralContainer: React.FC<TProps> = ({
 }) => {
   return (
     <SafeAreaView style={containerStyle || stylesDefault.container}>
-      <View style={containerInnerStyle || stylesDefault.containerInner}>
-        <StatusBar animated barStyle={"dark-content"} />
-        {isLoading ? (
-          <LoadingComponent />
-        ) : isError ? (
-          <ErrorComponent />
-        ) : (
-          children
-        )}
-      </View>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <View style={containerInnerStyle || stylesDefault.containerInner}>
+          <StatusBar animated barStyle={"dark-content"} />
+          {isLoading ? (
+            <LoadingComponent />
+          ) : isError ? (
+            <ErrorComponent />
+          ) : (
+            children
+          )}
+        </View>
+      </TouchableWithoutFeedback>
     </SafeAreaView>
   );
 };
