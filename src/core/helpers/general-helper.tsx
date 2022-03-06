@@ -7,6 +7,9 @@ export class GeneralHelper {
   }
 
   static CurrencyToString(value: number, symbol: boolean = false) {
+    if (isNaN(value)) {
+      return "";
+    }
     return (
       (symbol ? Language.Currency + " " : "") +
       value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
