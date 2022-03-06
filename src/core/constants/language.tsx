@@ -23,5 +23,7 @@ export const Language = {
   MenuItemDescriptionDebitDeactivated: "Your previously deactivated cards",
 
   SpendingLimitSummary: "Set a weekly debit card spending limit",
-  SpendingLimitHelp: "Here weekly means the last 7 days - not the calendar week",
+  SpendingLimitHelp:
+    "Here weekly means the last 7 days - not the calendar week",
+  SpendingLimitButtonSave: "Save",
 };
