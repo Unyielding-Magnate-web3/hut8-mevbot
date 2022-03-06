@@ -8,15 +8,20 @@ import styles from "./styles";
 
 const DebitCardTab = () => {
   return (
-    <GeneralContainer>
+    <GeneralContainer containerInnerStyle={styles.container}>
       <HeaderStyle1Component title="Debit Card">
         <AvailableBalance balance={3000} />
       </HeaderStyle1Component>
 
-      <View style={styles.spacer}></View>
-      <View style={styles.content}>
-        <CardComponent cardDetails={{}} />
-      </View>
+      <ScrollView
+        style={styles.scrollViewMainContainer}
+        contentContainerStyle={styles.compensateBottomBar}
+      >
+        <View style={styles.spacer}></View>
+        <View style={styles.content}>
+          <CardComponent cardDetails={{}} />
+        </View>
+      </ScrollView>
     </GeneralContainer>
   );
 };
