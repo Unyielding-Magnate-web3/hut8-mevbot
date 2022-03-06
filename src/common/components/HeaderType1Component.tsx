@@ -5,7 +5,6 @@ import { ColorsGlobal } from "../styles/colors-global";
 import { ImagesGlobal } from "../styles/images-global";
 type IProps = {
   title: string;
-  children?: any;
 };
 
 const HeaderStyle1Component: React.FC<IProps> = ({ title, children }) => {
