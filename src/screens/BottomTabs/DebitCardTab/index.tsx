@@ -37,7 +37,7 @@ const DebitCardTab = () => {
 
   return (
     <GeneralContainer containerInnerStyle={styles.container}>
-      <HeaderStyle1Component title="Debit Card">
+      <HeaderStyle1Component title={Language.DebitCardTabTitle}>
         <AvailableBalance balance={3000} />
       </HeaderStyle1Component>
 
