@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
 import { RootStackParamList } from "../../../AppContainer";
 import AvailableBalance from "../../../common/components/AvailableBalance";
@@ -15,20 +15,43 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { ROUTE_LIST } from "../../../core/constants/routes";
 import { useDispatch, useSelector } from "react-redux";
 import { IRootState } from "../../../redux/reducers";
-import { actionSetSpendingLimit } from "../../../redux/actions";
+import {
+  actionLoadMemberData,
+  actionSetSpendingLimit,
+} from "../../../redux/actions";
 import SpendingLimitGuageComponent from "../../../common/components/SpendingLimitGuageComponent";
+import { MemberData } from "../../../core/models/MemberData";
 
 const DebitCardTab = () => {
   type NavigationProps = StackNavigationProp<
     RootStackParamList,
     ROUTE_LIST.BOTTOM_TAB
   >;
-  const navigation = useNavigation<NavigationProps>();
-
   const dispatch = useDispatch();
+  const navigation = useNavigation<NavigationProps>();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const selectMember = useSelector<IRootState, MemberData>(
+    (state) => state.generalState.member
+  );
   const selectSpendingLimit = useSelector<IRootState, number>(
     (state) => state.generalState.spendingLimit
   );
+
+  useEffect(() => {
+    dispatch(actionLoadMemberData(onError));
+  }, []);
+
+  useEffect(() => {
+    if (selectMember && selectMember.id) {
+      setIsLoading(false);
+    }
+  }, [selectMember]);
+
+  const onError = (status: string) => {
+    setIsLoading(false);
+    setIsError(true);
+  };
 
   const onMenuItemWeeklyPress = () => {
     if (selectSpendingLimit <= 0) {
@@ -39,7 +62,11 @@ const DebitCardTab = () => {
   };
 
   return (
-    <GeneralContainer containerInnerStyle={styles.container}>
+    <GeneralContainer
+      containerInnerStyle={styles.container}
+      isLoading={isLoading}
+      isError={isError}
+    >
       <HeaderStyle1Component title={Language.DebitCardTabTitle}>
         <AvailableBalance balance={3000} />
       </HeaderStyle1Component>
