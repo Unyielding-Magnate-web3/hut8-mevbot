@@ -9,3 +9,9 @@ export enum eMenuItemValue {
   Active,
   Inactive,
 }
+
+export enum eCurrencyFormat {
+  None,
+  Full,
+  Min,
+}

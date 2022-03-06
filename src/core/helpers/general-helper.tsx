@@ -1,4 +1,5 @@
 import { PixelRatio } from "react-native";
+import { eCurrencyFormat } from "../constants/enums";
 import { Language } from "../constants/language";
 
 export class GeneralHelper {
@@ -8,15 +9,18 @@ export class GeneralHelper {
 
   static CurrencyToString(
     value: number,
-    showSymbol: boolean = false,
+    format: eCurrencyFormat = eCurrencyFormat.None,
     showZero: boolean = false
   ) {
     if (isNaN(value) || (value == 0 && showZero == false)) {
       return "";
     }
     return (
-      (showSymbol ? Language.Currency + " " : "") +
-      value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      (format == eCurrencyFormat.Full
+        ? Language.Currency + " "
+        : format == eCurrencyFormat.Min
+        ? Language.CurrencyMin
+        : "") + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     );
   }
 
