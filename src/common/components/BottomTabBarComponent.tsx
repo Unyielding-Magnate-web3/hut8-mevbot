@@ -94,10 +94,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: ColorsGlobal.White,
     position: "absolute",
-    elevation: 2,
     bottom: 0,
     right: 0,
     left: 0,
+    borderTopColor: "#00000010",
+    borderTopWidth: 1,
   },
   inner: {
     flexDirection: "row",
