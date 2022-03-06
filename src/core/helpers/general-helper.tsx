@@ -1,12 +1,16 @@
 import { PixelRatio } from "react-native";
+import { Language } from "../constants/language";
 
 export class GeneralHelper {
   static ScaledSize(size: number) {
     return PixelRatio.roundToNearestPixel(size / PixelRatio.getFontScale());
   }
 
-  static CurrencyToString(value: number) {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  static CurrencyToString(value: number, symbol: boolean = false) {
+    return (
+      (symbol ? Language.Currency + " " : "") +
+      value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    );
   }
 
   static CardNumberToString(value: string, masked: boolean = true) {
