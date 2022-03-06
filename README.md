@@ -2,6 +2,12 @@
 
 Just another react-native app
 
+## Screenshots
+
+<img src="./screenshots/1.PNG" style="width: 200px;"></img>
+<img src="./screenshots/2.PNG" style="width: 200px;"></img>
+<img src="./screenshots/3.PNG" style="width: 200px;"></img>
+
 ## Getting Started
 
 ### Android & iOS Environments
