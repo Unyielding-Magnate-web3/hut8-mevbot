@@ -1,6 +1,7 @@
-export const DUMMY = "GENERAL_ACTION_DUMMY";
-export interface Dummy {
-  type: typeof DUMMY;
+export const SET_SPENDING_LIMIT = "GENERAL_ACTION_SET_SPENDING_LIMIT";
+export interface SetSpendingLimitActionType {
+  type: typeof SET_SPENDING_LIMIT;
+  spendingLimit: number;
 }
 
-export type generalActions = Dummy;
+export type generalActions = SetSpendingLimitActionType;
