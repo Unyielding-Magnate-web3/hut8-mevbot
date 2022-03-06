@@ -14,4 +14,9 @@ export const ImagesGlobal = {
   IconHide: require("../../assets/images/hide.png"),
   IconCardBrandAspire: require("../../assets/images/card_brand_aspire.png"),
   IconCardNetworkVisa: require("../../assets/images/card_network_visa.png"),
+  IconMenuDebitTopUp: require("../../assets/images/menu_debit_topup.png"),
+  IconMenuDebitWeekly: require("../../assets/images/menu_debit_weekly.png"),
+  IconMenuDebitFreeze: require("../../assets/images/menu_debit_freeze.png"),
+  IconMenuDebitGetANew: require("../../assets/images/menu_debit_get_a_new.png"),
+  IconMenuDebitDeactivate: require("../../assets/images/menu_debit_deactivate.png"),
 };
