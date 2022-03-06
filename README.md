@@ -62,3 +62,5 @@ pod install
 7. App icon and identifier.
 
 8. Splash/Launch screen.
+
+9. Test cases.
