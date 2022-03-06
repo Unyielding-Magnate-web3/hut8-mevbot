@@ -29,10 +29,8 @@ const DebitCardTab = () => {
 
   const onMenuItemWeeklyPress = () => {
     if (!isWeeklyEnabled) {
-      setIsWeeklyEnabled(true);
-      // navigation.navigate(ROUTE_LIST.SPENDING_LIMIT_SCREEN);
+      navigation.navigate(ROUTE_LIST.SPENDING_LIMIT_SCREEN);
     } else {
-      // dispatch(updateUserWeeklyLimit(0));
       setIsWeeklyEnabled(false);
     }
   };
