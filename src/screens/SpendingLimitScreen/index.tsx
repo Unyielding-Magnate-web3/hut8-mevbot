@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import HeaderType2Component from "../../common/components/HeaderType2Component";
 import CurrencyInputComponent from "../../common/components/CurrencyInputComponent";
-import GeneralContainer from "../../common/container/generalContainer";
 import { ColorsGlobal } from "../../common/styles/colors-global";
 import { ImagesGlobal } from "../../common/styles/images-global";
 import { Language } from "../../core/constants/language";
@@ -13,6 +12,7 @@ import { SpendingLimitQuickSelectData } from "../../core/constants/app-data";
 import { useDispatch } from "react-redux";
 import { actionSetSpendingLimit } from "../../redux/actions";
 import { eCurrencyFormat } from "../../core/constants/enums";
+import GeneralKeyboardContainer from "../../common/container/generalKeyboardContainer";
 
 const SpendingLimitScreen = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const SpendingLimitScreen = () => {
   };
 
   return (
-    <GeneralContainer containerInnerStyle={styles.container}>
+    <GeneralKeyboardContainer containerInnerStyle={styles.container}>
       <HeaderType2Component
         title={Language.SpendingLimitScreenTitle}
         onBack={navigation.goBack}
@@ -97,7 +97,7 @@ const SpendingLimitScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </GeneralContainer>
+    </GeneralKeyboardContainer>
   );
 };
 

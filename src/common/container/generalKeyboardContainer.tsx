@@ -19,7 +19,7 @@ type TProps = {
   isError?: boolean;
 };
 
-const GeneralContainer: React.FC<TProps> = ({
+const GeneralKeyboardContainer: React.FC<TProps> = ({
   containerInnerStyle,
   containerStyle,
   children,
@@ -28,16 +28,18 @@ const GeneralContainer: React.FC<TProps> = ({
 }) => {
   return (
     <SafeAreaView style={containerStyle || stylesDefault.container}>
-      <View style={containerInnerStyle || stylesDefault.containerInner}>
-        <StatusBar animated barStyle={"dark-content"} />
-        {isLoading ? (
-          <LoadingComponent />
-        ) : isError ? (
-          <ErrorComponent />
-        ) : (
-          children
-        )}
-      </View>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <View style={containerInnerStyle || stylesDefault.containerInner}>
+          <StatusBar animated barStyle={"dark-content"} />
+          {isLoading ? (
+            <LoadingComponent />
+          ) : isError ? (
+            <ErrorComponent />
+          ) : (
+            children
+          )}
+        </View>
+      </TouchableWithoutFeedback>
     </SafeAreaView>
   );
 };
@@ -52,4 +54,4 @@ const stylesDefault = StyleSheet.create({
   },
 });
 
-export default GeneralContainer;
+export default GeneralKeyboardContainer;
