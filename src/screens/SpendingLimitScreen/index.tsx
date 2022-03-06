@@ -10,17 +10,21 @@ import { Language } from "../../core/constants/language";
 import { GeneralHelper } from "../../core/helpers/general-helper";
 import styles from "./styles";
 import { SpendingLimitQuickSelectData } from "../../core/constants/app-data";
+import { useDispatch } from "react-redux";
+import { actionSetSpendingLimit } from "../../redux/actions";
 
 const SpendingLimitScreen = () => {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
-  const [spendingLimit, setSpendingLimit] = useState("");
+  const [spendingLimit, setSpendingLimit] = useState(0);
 
   const onSpendingLimitChange = (value: number) => {
-    setSpendingLimit(GeneralHelper.CurrencyToString(value));
+    setSpendingLimit(value);
   };
 
   const onSave = () => {
-    if (spendingLimit && spendingLimit != "") {
+    if (spendingLimit > 0) {
+      dispatch(actionSetSpendingLimit(spendingLimit));
       navigation.goBack();
     }
   };
@@ -77,7 +81,7 @@ const SpendingLimitScreen = () => {
               styles.buttonSave,
               {
                 backgroundColor:
-                  spendingLimit != ""
+                  spendingLimit > 0
                     ? ColorsGlobal.ButtonActive
                     : ColorsGlobal.ButtonInactive,
               },

@@ -13,6 +13,9 @@ import MenuItem from "./components/MenuItem";
 import styles from "./styles";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { ROUTE_LIST } from "../../../core/constants/routes";
+import { useDispatch, useSelector } from "react-redux";
+import { IRootState } from "../../../redux/reducers";
+import { actionSetSpendingLimit } from "../../../redux/actions";
 
 const DebitCardTab = () => {
   const currentWeeklyLimit = 10;
@@ -23,15 +26,16 @@ const DebitCardTab = () => {
   >;
   const navigation = useNavigation<NavigationProps>();
 
-  const [isWeeklyEnabled, setIsWeeklyEnabled] = useState(
-    currentWeeklyLimit ? true : false
+  const dispatch = useDispatch();
+  const selectSpendingLimit = useSelector<IRootState, number>(
+    (state) => state.generalState.spendingLimit
   );
 
   const onMenuItemWeeklyPress = () => {
-    if (!isWeeklyEnabled) {
+    if (selectSpendingLimit <= 0) {
       navigation.navigate(ROUTE_LIST.SPENDING_LIMIT_SCREEN);
     } else {
-      setIsWeeklyEnabled(false);
+      dispatch(actionSetSpendingLimit(0));
     }
   };
 
@@ -64,7 +68,7 @@ const DebitCardTab = () => {
               description={Language.MenuItemDescriptionDebitWeeklySpending}
               type={eMenuItemType.Toggle}
               value={
-                isWeeklyEnabled
+                selectSpendingLimit > 0
                   ? eMenuItemValue.Active
                   : eMenuItemValue.Inactive
               }
