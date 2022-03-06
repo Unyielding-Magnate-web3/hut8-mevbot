@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 export type RootStackParamList = {
   [ROUTE_LIST.BOTTOM_TAB]: undefined;
+  [ROUTE_LIST.SPENDING_LIMIT_SCREEN]: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
