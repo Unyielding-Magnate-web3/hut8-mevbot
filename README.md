@@ -58,3 +58,7 @@ pod install
 5. Refactoring of common styles.
 
 6. Skeleton loader on Debit Card Tab.
+
+7. App icon and identifier.
+
+8. Splash/Launch screen.
