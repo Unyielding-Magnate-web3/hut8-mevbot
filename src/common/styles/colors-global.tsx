@@ -6,6 +6,7 @@ export const ColorsGlobal = {
   TabIconSelected: "#01D167", //Same as primary
   TextPrimary: "#25345F",
   TextSecondary: "#22222266",
-  ButtonToggleActive: "#01D167", //Same as primary
-  ButtonToggleInactive: "#EEEEEE",
+  ButtonActive: "#01D167", //Same as primary
+  ButtonInactive: "#EEEEEE",
+  ButtonQuickSelectBackground: "#20D16712",
 };

@@ -15,13 +15,13 @@ const ButtonToggle: React.FC<IProps> = ({ onPress, isActive, disabled }) => {
       style={styles.buttonStyle}
       thumbColor={ColorsGlobal.White}
       trackColor={{
-        true: ColorsGlobal.ButtonToggleActive,
-        false: ColorsGlobal.ButtonToggleInactive,
+        true: ColorsGlobal.ButtonActive,
+        false: ColorsGlobal.ButtonInactive,
       }}
       ios_backgroundColor={
         isActive
-          ? ColorsGlobal.ButtonToggleActive
-          : ColorsGlobal.ButtonToggleInactive
+          ? ColorsGlobal.ButtonActive
+          : ColorsGlobal.ButtonInactive
       }
       onValueChange={onPress}
       value={isActive}
