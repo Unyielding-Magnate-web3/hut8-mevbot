@@ -7,7 +7,7 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: ColorsGlobal.Secondary,
   },
-  spendingLimitSubTitle: {
+  textSpendingLimitHelp: {
     color: ColorsGlobal.TextSecondary,
     marginTop: GeneralHelper.ScaledSize(10),
     fontSize: GeneralHelper.ScaledSize(10),
@@ -31,7 +31,7 @@ export default StyleSheet.create({
     width: GeneralHelper.ScaledSize(15),
     height: GeneralHelper.ScaledSize(15),
   },
-  subtitleText: {
+  textSummary: {
     marginLeft: GeneralHelper.ScaledSize(10),
     fontSize: GeneralHelper.ScaledSize(10),
   },
@@ -69,7 +69,7 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
     height: GeneralHelper.ScaledSize(50),
-    backgroundColor: ColorsGlobal.ButtonInactive,
+    // backgroundColor: ColorsGlobal.ButtonInactive,
   },
   textButtonSave: {
     fontSize: GeneralHelper.ScaledSize(15),
